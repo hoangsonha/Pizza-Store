@@ -60,6 +60,8 @@ Từ 08/04/2024 tới 26/04/2024
 <br>
 <h2 align="center">Công nghệ được sử dụng</h2>
 <br>
+- JAVA
+<br>
 - AJAX
 <br>
 - JSP
