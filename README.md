@@ -49,7 +49,7 @@ Dự án tự học cá nhân
 <br>
 <h2 align="center">Thời gian hoàn thành</h2>
 <br>
-Từ 26/07/2023 tới 28/08/2023
+Từ 08/04/2024 tới 26/04/2024
 
 <br>
 <h2 align="center">Hình ảnh liên quan đến dự án</h2>
@@ -61,10 +61,16 @@ Từ 26/07/2023 tới 28/08/2023
 <h2 align="center">Công nghệ được sử dụng</h2>
 <br>
 - AJAX
+<br>
 - JSP
+<br>
 - SERVLET
+<br>
 - JSTL
+<br>
 - HTML/CSS
-- BOOTSTRAP5
+<br>
+- BOOTSTRAP 5
+<br>
 - JQUERY
-
+<br>
