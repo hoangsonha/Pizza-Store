@@ -10,11 +10,15 @@ Trang web dành cho mọi người muốn mua pizza
 <h2 align="center">Chức năng chính</h2>
 
 <br>
-- Chức năng tìm kiếm sản phẩm qua tên, id, giá có sử dụng AJAX và category
+
 
 <br>
 
 - CRUD sản phẩm, user, order với quyền admin
+
+<br>
+
+- Chức năng tìm kiếm sản phẩm qua tên, id, giá có sử dụng AJAX và category
 
 <br>
 
@@ -31,11 +35,11 @@ Trang web dành cho mọi người muốn mua pizza
 <br>
 
 - Chức năng thống kê sản phẩm bán được theo ngày và doanh thu trong 1 tháng
-- 
+
 <br>
 
 - Chức năng xem lịch sử mua hàng
-- 
+
 <br>
 
 <h2 align="center">Thành viên</h2>
