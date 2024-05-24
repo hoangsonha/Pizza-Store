@@ -18,8 +18,6 @@ Trang web dành cho mọi người muốn mua pizza
 
 <br>
 
-<br>
-
 - Phân quyền sử dụng Filter ứng với các Role
 
 <br>
