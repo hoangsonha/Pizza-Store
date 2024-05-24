@@ -18,6 +18,12 @@ Trang web dành cho mọi người muốn mua pizza
 
 <br>
 
+<br>
+
+- Phân quyền sử dụng Filter ứng với các Role
+
+<br>
+
 - Chức năng tìm kiếm sản phẩm qua tên, id, giá có sử dụng AJAX và category
 
 <br>
@@ -60,19 +66,19 @@ Từ 08/04/2024 tới 26/04/2024
 <br>
 <h2 align="center">Công nghệ được sử dụng</h2>
 <br>
-- JAVA
+* JAVA
 <br>
-- AJAX
+* AJAX
 <br>
-- JSP
+* JSP
 <br>
-- SERVLET
+* SERVLET
 <br>
-- JSTL
+* JSTL
 <br>
-- HTML/CSS
+* HTML/CSS
 <br>
-- BOOTSTRAP 5
+* BOOTSTRAP 5
 <br>
-- JQUERY
+* JQUERY
 <br>
