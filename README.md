@@ -20,9 +20,9 @@ Trang web dành cho mọi người muốn mua pizza
 
 - Phân quyền sử dụng Filter ứng với các Role
 
->br>
+<br>
 
-Dashboard cho quyền admin với tất cả chức năng của app
+- Dashboard cho quyền admin với tất cả chức năng của app
 
 <br>
 
