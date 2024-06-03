@@ -20,6 +20,10 @@ Trang web dành cho mọi người muốn mua pizza
 
 - Phân quyền sử dụng Filter ứng với các Role
 
+>br>
+
+Dashboard cho quyền admin với tất cả chức năng của app
+
 <br>
 
 - Chức năng tìm kiếm sản phẩm qua tên, id, giá có sử dụng AJAX và category
