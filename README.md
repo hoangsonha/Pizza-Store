@@ -9,44 +9,17 @@ Trang web dành cho mọi người muốn mua pizza
 
 <h2 align="center">Chức năng chính</h2>
 
-<br>
-
-
-<br>
-
-- CRUD sản phẩm, user, order với quyền admin
-
-<br>
-
-- Phân quyền sử dụng Filter ứng với các Role
-
-<br>
-
-- Dashboard cho quyền admin với tất cả chức năng của app
-
-<br>
-
-- Chức năng tìm kiếm sản phẩm qua tên, id, giá có sử dụng AJAX và category
-
-<br>
-
-- Dữ liệu được đưa lên từ database (SQL Server) để hiển thị
-
-<br>
-
-- Chức năng update thông tin user có sử dụng AJAX
-
-<br>
-
-- Chức năng thêm giỏ hàng và thanh toán khi người dùng không đăng nhập hoặc người dùng đăng nhập có sử dụng AJAX
-
-<br>
-
-- Chức năng thống kê sản phẩm bán được theo ngày và doanh thu trong 1 tháng
-
-<br>
-
-- Chức năng xem lịch sử mua hàng
+- Authorization with Filter to verify user 
+- Login, register, logout
+- View profile and update information of user using Ajax
+- Dashboard for admin rights to all of functions
+- CRUD products, users, orders for admin rights
+- Search products by name, id, price  and search by product type using Ajax
+- Search order by start date and end date
+- Data is uploaded from the database (SQL Server) for display
+- CRUD Cart and Checkout when the user is not logged in or when the user is logged using Ajax
+- Statistics of products sold by date and revenue in 1 month
+- View purchase history
 
 <br>
 
