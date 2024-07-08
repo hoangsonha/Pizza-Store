@@ -35,14 +35,27 @@ public class AuthenFilter implements Filter {
     private static List<String> USER_RESOURCE;
     private static List<String> ADMIN_RESOURCE;
     private static List<String> NON_AUTHEN_RESOURCE;
-    private static final String US = "2";
-    private static final String AD = "1";
+    private static final int US = 2;
+    private static final int AD = 1;
     private static final String LOGIN_PAGE = "bothLoginRegister.jsp";
-    private static final String HOME_PAGE = "HomeController";
+    private static final String HOME_PAGE = "MainController";
 
     private FilterConfig filterConfig = null;
 
     public AuthenFilter() {
+        
+        USER_RESOURCE = new ArrayList<>();   
+        USER_RESOURCE.add("HistoryController");     
+        USER_RESOURCE.add("AddCartController");
+        USER_RESOURCE.add("CheckoutController");
+        USER_RESOURCE.add("LogoutController");
+        USER_RESOURCE.add("PaymentController");
+        USER_RESOURCE.add("UpdateCartController");
+        USER_RESOURCE.add("ViewCartController");
+        USER_RESOURCE.add("DeleteCartController");
+        USER_RESOURCE.add("homePage.jsp");
+        USER_RESOURCE.add("EditUserController");
+        
         NON_AUTHEN_RESOURCE = new ArrayList<>();
         NON_AUTHEN_RESOURCE.add("MainController");
         NON_AUTHEN_RESOURCE.add("bothLoginRegister.jsp");
@@ -52,21 +65,30 @@ public class AuthenFilter implements Filter {
         NON_AUTHEN_RESOURCE.add("RegisterAccountController");
         NON_AUTHEN_RESOURCE.add("HomeController");
         NON_AUTHEN_RESOURCE.add("LoginController");
-        NON_AUTHEN_RESOURCE.add("/image");
-        NON_AUTHEN_RESOURCE.add("HistoryController");
-        NON_AUTHEN_RESOURCE.add("EditUserController");
-        USER_RESOURCE = new ArrayList<>();
-        USER_RESOURCE.add("AddCartController");
-        USER_RESOURCE.add("EditUserController");
-        USER_RESOURCE.add("AddCartController");
-        USER_RESOURCE.add("CheckoutController");
-        USER_RESOURCE.add("LogoutController");
-        USER_RESOURCE.add("PaymentController");
-        USER_RESOURCE.add("UpdateCartController");
-        USER_RESOURCE.add("ViewCartController");
-        USER_RESOURCE.add("DeleteCartController");
-        USER_RESOURCE.add("UpdateAccountController");
-        ADMIN_RESOURCE = new ArrayList<>();
+        NON_AUTHEN_RESOURCE.add("/image");    
+        
+        ADMIN_RESOURCE = new ArrayList<>();   
+        ADMIN_RESOURCE.add("AccountController");
+        ADMIN_RESOURCE.add("AddCartController");
+        ADMIN_RESOURCE.add("CheckoutController");
+        ADMIN_RESOURCE.add("CreateAccountController");
+        ADMIN_RESOURCE.add("CreateAccountViewController");
+        ADMIN_RESOURCE.add("CreateProductController");
+        ADMIN_RESOURCE.add("CreateProductViewController");
+        ADMIN_RESOURCE.add("DeleteAccountController");
+        ADMIN_RESOURCE.add("DeleteCartController");
+        ADMIN_RESOURCE.add("DeleteProductController");
+        ADMIN_RESOURCE.add("EditUserController");
+        ADMIN_RESOURCE.add("HistoryController");
+        ADMIN_RESOURCE.add("LogoutController");
+        ADMIN_RESOURCE.add("PaymentController");
+        ADMIN_RESOURCE.add("ProductController");
+        ADMIN_RESOURCE.add("ReportController");
+        ADMIN_RESOURCE.add("UpdateAccountController");
+        ADMIN_RESOURCE.add("UpdateAccountViewController");
+        ADMIN_RESOURCE.add("UpdateCartController");
+        ADMIN_RESOURCE.add("UpdateProductController");
+        ADMIN_RESOURCE.add("ViewCartController");     
         ADMIN_RESOURCE.add("adminPage.jsp");
         ADMIN_RESOURCE.add("homePage.jsp");
         ADMIN_RESOURCE.add("updateAccount.jsp");
@@ -77,25 +99,14 @@ public class AuthenFilter implements Filter {
         ADMIN_RESOURCE.add("admin_accountList.jsp");
         ADMIN_RESOURCE.add("admin_productList.jsp");
         ADMIN_RESOURCE.add("account_profile.jsp");
-        ADMIN_RESOURCE.add("AccountController");
-        ADMIN_RESOURCE.add("AddCartController");
-        ADMIN_RESOURCE.add("CheckoutController");
-        ADMIN_RESOURCE.add("UpdateAccountController");
-        ADMIN_RESOURCE.add("CreateAccountController");
-        ADMIN_RESOURCE.add("CreateAccountViewController");
-        ADMIN_RESOURCE.add("CreateProductController");
-        ADMIN_RESOURCE.add("CreateProductViewController");
-        ADMIN_RESOURCE.add("DeleteAccountController");
-        ADMIN_RESOURCE.add("DeleteCartController");
-        ADMIN_RESOURCE.add("DeleteProductController");
-        ADMIN_RESOURCE.add("LogoutController");
-        ADMIN_RESOURCE.add("PaymentController");
-        ADMIN_RESOURCE.add("ProductController");
-        ADMIN_RESOURCE.add("ReportController");
-        ADMIN_RESOURCE.add("UpdateAccountViewController");
-        ADMIN_RESOURCE.add("UpdateCartController");
-        ADMIN_RESOURCE.add("UpdateProductController");
-        ADMIN_RESOURCE.add("ViewCartController");
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     private void doBeforeProcessing(ServletRequest request, ServletResponse response)
@@ -177,20 +188,18 @@ public class AuthenFilter implements Filter {
             HttpSession session = req.getSession();
             if (session == null || session.getAttribute("LOGIN_USER") == null) {
                 res.sendRedirect(HOME_PAGE);
-            } else {
-                int typeID = ((Account) session.getAttribute("LOGIN_USER")).getType();
-                String type = String.valueOf(typeID);
-                if (AD.equals(type) && ADMIN_RESOURCE.contains(resource)) {
-                    chain.doFilter(request, response);
-                } else {
-                    if (US.equals(typeID) && USER_RESOURCE.contains(resource)) {
-                        chain.doFilter(request, response);
-                    } else {
-                        res.sendRedirect(HOME_PAGE);
+            } else {             
+                String roleID = String.valueOf(((Account) session.getAttribute("LOGIN_USER")).getType());
+                
+                if (US == Integer.parseInt(roleID) && USER_RESOURCE.contains(resource)) {
+                            chain.doFilter(request, response);
+                } else if (AD == Integer.parseInt(roleID) && ADMIN_RESOURCE.contains(resource)) {
+                            chain.doFilter(request, response);
+                        } else {
+                            res.sendRedirect(HOME_PAGE);
+                        }  
                     }
                 }
-            }
-        }
     }
 
     public FilterConfig getFilterConfig() {

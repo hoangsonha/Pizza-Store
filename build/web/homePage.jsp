@@ -9,10 +9,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <%! public String getString() {
-        return "Hello";
-}
-%>
     <head>
         <title>Home Page</title>
         <meta charset="UTF-8">
@@ -22,11 +18,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <link href="css/style.css" rel="stylesheet">
-         
+        <link href="css/style.css" rel="stylesheet">      
     </head>
     <body>
-
         <div class="app" style="z-index: 3">
             <div class="header">
                 <div role="navigation">
@@ -71,9 +65,9 @@
                                                 <c:if test="${not empty requestScope.LIST_CATEGORY}">
                                                     <c:forEach var="category" varStatus="counter" items="${requestScope.LIST_CATEGORY}">
                                                         <li style="border: 2px solid greenyellow;" onclick="changeCategory(this)" class="dropdown-item subLink"><a><span class="sub-menu-title" style="position: absolute; top: -35px; left: -32px;">${category.categoryName}</span></a></li>
-                                                                </c:forEach>
-                                                            </c:if>
-                                                        </c:if>
+                                                    </c:forEach>
+                                                </c:if>
+                                             </c:if>
                                         </ul>      
                                     </li>
                                     <li class="nav-item">
@@ -89,7 +83,7 @@
                             </nav>
                             <nav class="main-nav-wrap">
                                 <div class="main-nav">
-                                    <div class="nav-item-scroll">
+                                    <div class="nav-item-scroll" style="width: 851px">
                                         <div id="scrollContent">
                                             <div>Đây là mẫu bài viết về món ăn thông dụng thường thấy trong quá trình hoạt động ở nhà hàng. Việc chia sẻ thêm nhiều món ăn mới sẽ giúp khách hàng cũ thích thú và quay lại, kèm theo đó thu hút thêm khách hàng mới trải nghiệm những món ăn lạ của riêng nhà hàng. </div>
                                         </div>
@@ -188,7 +182,7 @@
                                                 <div class="card-body">
                                                     <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
                                                         <a href="#!" class="text-dark fw-bold">Details</a>
-                                                        <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary" id="${product.productID}" value="${product.productID}" onclick="buyProduct(this)">Buy now</button>
+                                                        <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary" id="${product.productID}" value="${product.productID}" onclick="buyProduct(this)" >Buy now</button>
                                                     </div>
                                                     <div  style="color: greenyellow; font-size: 18px; text-align: center;"></div> 
                                                 </div>
@@ -262,13 +256,28 @@
                 url: 'EditUserController',
                 type: 'GET',
                 success: function (rest) {
-                    console.log(rest)
+
                     if (rest.includes('.jsp')) {
                         window.location = rest;
                     } else {    
                         var conten = document.getElementById('body');
                         conten.innerHTML = rest;
                     }
+                }
+            });
+        }
+
+       
+
+        function showHistory() {
+            $.ajax({
+                url: 'HistoryController',
+                type: 'GET',
+                success: function (rest) {
+                        
+                        var conten = document.getElementById('body');
+                        conten.innerHTML = rest;
+                    
                 }
             });
         }
@@ -310,6 +319,7 @@
         ;
         function buyProduct(para) {
             var s = para.value;
+            console.log(s);
             $.ajax({
                 url: 'AddCartController',
                 type: 'GET',
@@ -317,14 +327,15 @@
                     productID: para.value
                 },
                 success: function (rest) {
-                    if (para.value == s) {
+                    console.log(rest);
+                    if (para.value === s) {
                         var str = JSON.stringify(rest);
 
                         if (str.includes('jsp')) {
                             window.location = rest;
                         } else {
                             var quantity = document.getElementById("quantity").innerText;
-                            if (quantity == null) {
+                            if (quantity === null) {
                                 quantity = '';
                             }
                             var quanti = new Number(quantity);
@@ -339,7 +350,7 @@
                 }
             });
         }
-        ;
+        
         function showCart() {
             $.ajax({
                 url: 'ViewCartController',
@@ -352,22 +363,7 @@
             });
         }
         
-        
-
-        function showHistory() {
-            $.ajax({
-                url: 'HistoryController',
-                type: 'GET',
-                success: function (rest) {
-                    console.log(rest);
-                    console.log(typeof rest);
-                    
-                        var conten = document.getElementById('body');
-                        conten.innerHTML = rest;
-                    
-                }
-            });
-        }
+ 
 
 
         function deleteProduct(param) {
@@ -397,6 +393,8 @@
             var text = param.value;
             var getID = "quantity_cart_" + text;
             var clas = document.getElementById(getID).value;
+            var quantity = document.getElementById('quantity').innerText;
+            
             $.ajax({
                 url: 'UpdateCartController',
                 type: 'GET',
@@ -406,14 +404,17 @@
                 },
                 success: function (rest) {
                     var str = JSON.stringify(rest);
-
-                    if (str.includes('jsp')) {
-                        window.location = rest;
-                    } else {
-
+                    
+                        var quant = new Number(quantity);
+                        var quant2 = new Number(clas);
+                        
+                        var check = quant + quant2;
+                        
+                        console.log(check)
+                    
                         var conten = document.getElementById('body');
                         conten.innerHTML = rest;
-                    }
+                    
                 }
             });
         }

@@ -24,7 +24,7 @@ public class OrderDAO {
     private final static String ADD_ORDER = "insert into Orders(AccountID, OrderDate, Status, ShipAddress) values (?,?,?,?)";
     private final static String GET_MAX_ID = "select max(OrderID) as gg from Orders";
     private final static String STATUS = "update Orders set status=? where OrderID=?";
-    private final static String HISTORY = "select od.ProductID, od.Quantity, od.UnitPrice , o.OrderDate, o.Status, o.ShipAddress from OrderDetails od, Orders o where o.OrderID = od.OrderID and o.AccountID=?"; 
+    private final static String HISTORY = "select od.ProductID, od.Quantity, od.UnitPrice , o.OrderDate, o.Status, o.ShipAddress from OrderDetails od, Orders o where o.OrderID = od.OrderID and o.AccountID=? order by o.OrderDate desc"; 
     private final static String REPORT = "select OrderID, AccountID, OrderDate, Status, ShipAddress from Orders where OrderDate > ? and OrderDate < ? order by OrderID desc";
    
     

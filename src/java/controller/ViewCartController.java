@@ -96,7 +96,7 @@ public class ViewCartController extends HttpServlet {
                                 + "                                    <p class=\"text-muted mb-2\">Quantity</p>\n"
                                 + "                                    <div class=\"d-inline-flex\" style=\"width: 100px;\">\n"
                                 + "                         <input type=\"number\" value=\"" + p.getQuantity() + "\" name=\"quantity_cart\" id=\"quantity_cart_" + p.getProductID() + "\" min=\"1\">\n" +
-"                                                           <button type=\"button\" class=\"btn btn-primary\" style=\"width: 60px; height: 30px\" id=\"update_cart\" name=\"update_cart\" onclick=\"updateCart(this)\" value=\"" + p.getProductID() + "\">Save</button>"
+"                                                           <button type=\"button\" class=\"btn btn-primary\" style=\"width: 60px; z-index: 999; height: 30px\" id=\"update_cart\" name=\"update_cart\" onclick=\"updateCart(this)\" value=\"" + p.getProductID() + "\">Save</button>"
                                 + "                                    </div>\n"
                                 + "                                </div>\n"
                                 + "                            </div>\n"

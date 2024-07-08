@@ -46,7 +46,7 @@
                     </nav>
                     <nav class="main-nav-wrap">
                         <div class="main-nav">
-                            <div class="nav-item-scroll">
+                            <div class="nav-item-scroll" style="width: 1033px">
                                 <div id="scrollContent">
                                     <div>Đây là mẫu bài viết về món ăn thông dụng thường thấy trong quá trình hoạt động ở nhà hàng. Việc chia sẻ thêm nhiều món ăn mới sẽ giúp khách hàng cũ thích thú và quay lại, kèm theo đó thu hút thêm khách hàng mới trải nghiệm những món ăn lạ của riêng nhà hàng. </div>
                                 </div>

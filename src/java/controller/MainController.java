@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author ADMIN
  */
 public class MainController extends HttpServlet {
-    private final static String WEL = "";
+
     private final static String WELCOME = "HomeController";
     
     private final static String SEARCH = "Search";
@@ -111,9 +111,7 @@ public class MainController extends HttpServlet {
                 url = DELETE_ACCOUNT_PAGE;
             } else if(CART_VIEW.equals(action)) {
                 url = CART_VIEW_PAGE;
-            } else if(WEL.equals(action)) {
-                url = WELCOME;
-            } else if(CHECKOUT.equals(action)) {
+            }  else if(CHECKOUT.equals(action)) {
                 url = CHECKOUT_PAGE;
             } else if(PAYMENT.equals(action)) {
                 url = PAYMENT_PAGE;

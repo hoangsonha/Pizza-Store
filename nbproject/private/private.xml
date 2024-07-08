@@ -3,17 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/NetBeans/Asssiment/src/java/controller/SearchController.java</file>
-            <file>file:/D:/NetBeans/Asssiment/web/css/style_admin.css</file>
-            <file>file:/D:/NetBeans/Asssiment/src/java/Util/DBUtils.java</file>
+            <file>file:/D:/NetBeans/Asssiment/src/java/fillter/AuthenFilter.java</file>
+            <file>file:/D:/NetBeans/Asssiment/src/java/controller/UpdateCartController.java</file>
+            <file>file:/D:/NetBeans/Asssiment/src/java/controller/HistoryController.java</file>
+            <file>file:/D:/NetBeans/Asssiment/src/java/controller/EditUserController.java</file>
+            <file>file:/D:/NetBeans/Asssiment/src/java/controller/ViewCartController.java</file>
+            <file>file:/D:/NetBeans/Asssiment/src/java/model/OrderDAO.java</file>
             <file>file:/D:/NetBeans/Asssiment/web/homePage.jsp</file>
-            <file>file:/D:/NetBeans/Asssiment/src/java/model/Account.java</file>
-            <file>file:/D:/NetBeans/Asssiment/src/java/model/ProductDAO.java</file>
-            <file>file:/D:/NetBeans/Asssiment/src/java/model/AccountDAO.java</file>
-            <file>file:/D:/NetBeans/Asssiment/src/java/controller/MainController.java</file>
-            <file>file:/D:/NetBeans/Asssiment/web/adminPage.jsp</file>
-            <file>file:/D:/NetBeans/Asssiment/src/java/Util/StorageFile.java</file>
-            <file>file:/D:/NetBeans/Asssiment/web/account_profile.jsp</file>
+            <file>file:/D:/NetBeans/Asssiment/src/java/controller/UpdateAccountController.java</file>
         </group>
     </open-files>
 </project-private>
