@@ -36,7 +36,12 @@ Từ 08/04/2024 tới 26/04/2024
 <h2 align="center">Hình ảnh liên quan đến dự án</h2>
 <br>
 
-![![image](https://github.com/hoangsonha/Pizza-Store/assets/125444255/7a570dc8-7c92-4aa0-b6d2-7a9842c1dd7d)
+![Source code and test script](https://github.com/hoangsonha/Pizza-Store/blob/master/screenshots/home.png)
+![Source code and test script](https://github.com/hoangsonha/Pizza-Store/blob/master/screenshots/login.png)
+![Source code and test script](https://github.com/hoangsonha/Pizza-Store/blob/master/screenshots/cart.png)
+![Source code and test script](https://github.com/hoangsonha/Pizza-Store/blob/master/screenshots/admin.png)
+![Source code and test script](https://github.com/hoangsonha/Pizza-Store/blob/master/screenshots/history.png)
+![Source code and test script](https://github.com/hoangsonha/Pizza-Store/blob/master/screenshots/profile.png)
 
 <br>
 <h2 align="center">Công nghệ được sử dụng</h2>
